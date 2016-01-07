@@ -3,8 +3,8 @@ package enums;
 public enum Conflict {
 	rollback, abort, fail, ignore, replace, none;
 	
-	public String onConflict() {
+	public String conflict() {
 		if (this == none) return "";
-		return "ON CONFLICT " + this.toString().toUpperCase();
+		return "ON CONFLICT " + super.toString().toUpperCase();
 	}
 }

@@ -1,13 +1,21 @@
 package enums;
 
 public enum FKDeferrable {
-	 initiallyDeferred,  initallyImmediate;
+	 initiallyDeferred("INITIALLY DEFERRED"),  
+	 initallyImmediate ("INITIALLY IMMEDIATE");
+	 
+	 String deferrable;
+	 FKDeferrable(String def){
+		 this.deferrable  = def;
+	 }
+	 void deferrable(String deferrable ) {
+		 this.deferrable = deferrable;
+	 }
+	 String deferrable() {
+		 return this.deferrable;
+	 }
 	 
 	 public String toString () {
-		 switch (this) {
-		 case initiallyDeferred: return "INITIALLY DEFERRED";
-		 case initallyImmediate: return "INITIALLY IMMEDIATE";
-		 default: return "error";
-		 }
+		 return deferrable;
 	 }
 }
